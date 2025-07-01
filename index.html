@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pesan Plakat Akrilik (Vandel)</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    .wrapper {
+      padding: 16px;
+    }
+    form {
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      max-width: 480px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .deskripsi {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    select, input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .note {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #d35400;
+      background: #fff6e5;
+      padding: 12px;
+      border-radius: 8px;
+    }
+    .note b {
+      display: block;
+      font-size: 16px;
+      color: #c0392b;
+      margin-bottom: 6px;
+    }
+    button {
+      width: 100%;
+      margin-top: 20px;
+      background-color: #25d366;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1ebe5d;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <form onsubmit="sendToWhatsApp(); return false;">
+      <h2>Pesan "Plakat Akrilik (Vandel)"</h2>
+      <div class="deskripsi">
+        Plakat merupakan sejenis souvenir yang terbuat dari bahan pilihan dan seringkali digunakan sebagai souvenir atau hadiah yang diberikan untuk orang lain pada momen spesial. Fungsi plakat diantaranya digunakan sebagai ucapan selamat pernikahan, ucapan ulang tahun, ucapan terima kasih, ucapan penghargaan, trofi perlombaan dan trofi wisuda, ucapakan kerja sama.
+        <br><br>
+        Bahan yang digunakan untuk membuat plakat biasanya terbuat dari akrilik, marmer, fiber glass, kaca atau bisa juga dengan menggunakan kayu yang ringan. Sementara bahan yang kami gunakan adalah akrilik yang memunculkan kesan minimalis dan elegan.
+      </div>
+
+      <label>Nama Anda</label>
+      <input type="text" id="nama" required>
+
+      <label>Nomor WhatsApp Anda</label>
+      <input type="tel" id="nowa" pattern="[0-9]+" required>
+
+      <label>Ukuran</label>
+      <select id="ukuran" required>
+        <option value="A5">A5 (14,8 x 21 cm)</option>
+        <option value="A4">A4 (21 x 29,7 cm)</option>
+        <option value="F4">F4 (21,5 x 33 cm)</option>
+        <option value="A3">A3 (29,7 x 42 cm)</option>
+      </select>
+
+      <label>Jenis Akrilik</label>
+      <select id="akrilik" required>
+        <option value="Akrilik Bening 5 mm">Akrilik Bening (5 mm)</option>
+        <option value="Akrilik Bening 10 mm">Akrilik Bening (10 mm)</option>
+        <option value="Akrilik Putih 5 mm">Akrilik Putih (5 mm)</option>
+        <option value="Akrilik Hitam 5 mm">Akrilik Hitam (5 mm)</option>
+      </select>
+
+      <label>Jenis Cetakan</label>
+      <select id="cetakan" required>
+        <option value="UV Print CMYK">UV Print CMYK</option>
+        <option value="UV Print CMYK + White">UV Print CMYK + White</option>
+        <option value="Grafir">Grafir</option>
+      </select>
+
+      <label>Dengan Box Bludru Juga?</label>
+      <select id="boxBludru" onchange="toggleBoxFields()" required>
+        <option value="Tidak">Tidak, Plakat Aja</option>
+        <option value="Iya">Iya Pakai Box</option>
+      </select>
+
+      <div id="boxDetail" style="display:none;">
+        <label>Ukuran Box</label>
+        <select id="ukuranBox">
+          <option value="Box A5">Box A5 (14,8 x 21 cm)</option>
+          <option value="Box A4">Box A4 (21 x 29,7 cm)</option>
+          <option value="Box F4">Box F4 (21,5 x 33 cm)</option>
+          <option value="Box A3">Box A3 (29,7 x 42 cm)</option>
+        </select>
+
+        <label>Warna Kain Bludru</label>
+        <select id="warnaBludru">
+          <option value="Hitam">Bludru Hitam</option>
+          <option value="Merah">Bludru Merah</option>
+          <option value="Biru">Bludru Biru</option>
+          <option value="Ungu">Bludru Ungu</option>
+          <option value="Hijau">Bludru Hijau</option>
+        </select>
+
+        <label>Pakai Kuncian di Box?</label>
+        <select id="kuncian">
+          <option value="Pakai Kuncian">Pakai Kuncian</option>
+          <option value="Tidak Pakai Kuncian">Tidak Pakai Kuncian</option>
+        </select>
+      </div>
+
+      <label>Jumlah (Pcs)</label>
+      <input type="number" id="jumlah" min="1" required>
+
+      <label>Kapan Dibutuhkan?</label>
+      <input type="date" id="tanggal" required>
+
+      <label>Pada Jam Berapa?</label>
+      <input type="time" id="jam" required>
+
+      <label>Catatan Khusus untuk Admin Kami</label>
+      <textarea id="catatan" rows="4"></textarea>
+
+      <div class="note">
+        <b>Penting !</b>
+        Estimasi Dateline Yang Anda Atur Bisa Berubah Sesuai Kondisi Antrian, Anda Bisa Atur Negosiasi Waktu Dateline Dengan Admin Kami. <b>"Pastikan File Anda Ready / Siap Print"</b>
+      </div>
+
+      <button type="submit">Cek Harga ke Admin Metropolis Print</button>
+    </form>
+  </div>
+
+  <script>
+    function toggleBoxFields() {
+      var boxDetail = document.getElementById("boxDetail");
+      var boxBludru = document.getElementById("boxBludru").value;
+      boxDetail.style.display = (boxBludru === "Iya") ? "block" : "none";
+    }
+
+    function formatTanggalIndo(tanggalInput) {
+      const bulanIndo = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+      const hariIndo = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+      const dateObj = new Date(tanggalInput);
+      const hari = hariIndo[dateObj.getDay()];
+      const tanggal = dateObj.getDate();
+      const bulan = bulanIndo[dateObj.getMonth()];
+      const tahun = dateObj.getFullYear();
+      return `${hari}, ${tanggal} ${bulan} ${tahun}`;
+    }
+
+    function sendToWhatsApp() {
+      const adminWa = "6282335222268";
+      const nama = document.getElementById("nama").value;
+      const nowa = document.getElementById("nowa").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const akrilik = document.getElementById("akrilik").value;
+      const cetakan = document.getElementById("cetakan").value;
+      const boxBludru = document.getElementById("boxBludru").value;
+      const jumlah = document.getElementById("jumlah").value;
+      const tanggal = formatTanggalIndo(document.getElementById("tanggal").value);
+      const jam = document.getElementById("jam").value;
+      const catatan = document.getElementById("catatan").value || "-";
+
+      let detailBox = "";
+      if (boxBludru === "Iya") {
+        const ukuranBox = document.getElementById("ukuranBox").value;
+        const warnaBludru = document.getElementById("warnaBludru").value;
+        const kuncian = document.getElementById("kuncian").value;
+        detailBox = `\n📦 Box: ${ukuranBox}, Warna: ${warnaBludru}, ${kuncian}`;
+      }
+
+      const pesan =
+        `📌 Pemesanan Plakat Akrilik (Vandel)\n\n` +
+        `👤 Nama: ${nama}\n` +
+        `📱 No. WA: ${nowa}\n` +
+        `📐 Ukuran: ${ukuran}\n` +
+        `🔳 Jenis Akrilik: ${akrilik}\n` +
+        `🖨️ Cetakan: ${cetakan}\n` +
+        `🎁 Box Bludru: ${boxBludru}${detailBox}\n` +
+        `📦 Jumlah: ${jumlah} pcs\n` +
+        `🗓️ Tanggal: ${tanggal}\n` +
+        `⏰ Jam: ${jam}\n` +
+        `📝 Catatan: ${catatan}`;
+
+      const url = `https://wa.me/${adminWa}?text=${encodeURIComponent(pesan)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
