@@ -110,41 +110,11 @@
 
       <label>Jenis Cetakan</label>
       <select id="cetakan" required>
-        <option value="UV Print CMYK">UV Print CMYK</option>
-        <option value="UV Print CMYK + White">UV Print CMYK + White</option>
+        <option value="UV Print CMYK">UV Print CMYK Aja</option>
+        <option value="UV Print CMYK + White">UV Print CMYK + Tinta Putih</option>
+        <option value="UV Print Tinta Putih Aja">UV Print CMYK + White</option>
         <option value="Grafir">Grafir</option>
       </select>
-
-      <label>Dengan Box Bludru Juga?</label>
-      <select id="boxBludru" onchange="toggleBoxFields()" required>
-        <option value="Tidak">Tidak, Plakat Aja</option>
-        <option value="Iya">Iya Pakai Box</option>
-      </select>
-
-      <div id="boxDetail" style="display:none;">
-        <label>Ukuran Box</label>
-        <select id="ukuranBox">
-          <option value="Box A5">Box A5 (14,8 x 21 cm)</option>
-          <option value="Box A4">Box A4 (21 x 29,7 cm)</option>
-          <option value="Box F4">Box F4 (21,5 x 33 cm)</option>
-          <option value="Box A3">Box A3 (29,7 x 42 cm)</option>
-        </select>
-
-        <label>Warna Kain Bludru</label>
-        <select id="warnaBludru">
-          <option value="Hitam">Bludru Hitam</option>
-          <option value="Merah">Bludru Merah</option>
-          <option value="Biru">Bludru Biru</option>
-          <option value="Ungu">Bludru Ungu</option>
-          <option value="Hijau">Bludru Hijau</option>
-        </select>
-
-        <label>Pakai Kuncian di Box?</label>
-        <select id="kuncian">
-          <option value="Pakai Kuncian">Pakai Kuncian</option>
-          <option value="Tidak Pakai Kuncian">Tidak Pakai Kuncian</option>
-        </select>
-      </div>
 
       <label>Jumlah (Pcs)</label>
       <input type="number" id="jumlah" min="1" required>
